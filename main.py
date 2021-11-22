@@ -77,12 +77,13 @@ def home():
             random_square = sample(square_images, 2)
         except ValueError:
             return render_template("index.html", year=year)
-    if request.method == "POST":
-        notifications = Notifications()
-        contact_name = request.form["name"]
-        contact_email = request.form["email"]
-        notifications.send_message(name=contact_name, email=contact_email)
-    return render_template("index.html", year=year, trip_pics=random_trip, square_pics=random_square)
+        finally:
+            if request.method == "POST":
+                notifications = Notifications()
+                contact_name = request.form["name"]
+                contact_email = request.form["email"]
+                notifications.send_message(name=contact_name, email=contact_email)
+            return render_template("index.html", year=year, trip_pics=random_trip, square_pics=random_square)
 
 
 @app.route("/login", methods=["POST", "GET"])
