@@ -1,0 +1,65 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"/>
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/login.css') }}">
+{% endblock %}
+
+{% block title %}eMAGN Gallery{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="heading">Galeria de Imagenes</h1>
+    <p class="description">Estas son todas las imagenes disponibles en la base de datos.</p>
+
+    <div class="row">
+
+        {% for image in images: %}
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="image-card">
+                <div class="front "
+                     style="background-image: url('https://drive.google.com/uc?export=view&id={{ image.url }}');">
+                </div>
+                <div class="back">
+                    <div class="front-card">
+                        <div class="title">{{ image.title }}</div>
+                        <p class="overview">{{ image.description }}</p>
+                        <a href="{{ url_for('edit', image_id=image.id) }}" class="button update-button">Actualizar</a>
+                        <a href="{{ url_for('delete', image_id=image.id) }}" class="button delete-button">Borrar
+                            cuadro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+<div class="container text-center add">
+    <a href="{{ url_for('add') }}" class="button">Anadir cuadro</a>
+</div>
+<footer>
+    <ul class="copyright">
+        <li>{{year}} - &copy; eMagn NFT Digital Art</li>
+        <li>Adapted by: RSun</li>
+    </ul>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+{% endblock %}

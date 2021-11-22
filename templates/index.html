@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>eMAGN</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }} "/>
+    <noscript>
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }} "/>
+    </noscript>
+</head>
+<body class="is-preload landing">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 id="logo"><a href="index.html">eMAGN</a></h1>
+        <nav id="nav">
+            <ul>
+                <!--							<li><a href="index.html">Home</a></li>-->
+                <!--							<li>-->
+                <!--								<a href="#">Layouts</a>-->
+                <!--								<ul>-->
+                <!--									<li><a href="left-sidebar.html">Left Sidebar</a></li>-->
+                <!--									<li><a href="right-sidebar.html">Right Sidebar</a></li>-->
+                <!--									<li><a href="no-sidebar.html">No Sidebar</a></li>-->
+
+                <!--								</ul>-->
+                <!--							</li>-->
+                <!--							<li><a href="elements.html">Elements</a></li>-->
+                <li><a href="https://opensea.io/eMagn" target="_blank" class="button primary">Buy NFT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section id="banner">
+        <div class="content">
+            <header>
+                <h2>e M A G N</h2>
+                <p>Digital Art NFT Gallery.<br/>
+                    Your own Exclusivity!!</p>
+            </header>
+            <span class="image"><img src="{{ url_for('static', filename='images/emagn_logo_1.png') }}" alt=""/></span>
+        </div>
+        <a href="#one" class="goto-next scrolly">Next</a>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="spotlight style1 bottom">
+        {% if trip_pics[0]: %}
+        <span class="image fit main"><img src="https://drive.google.com/uc?export=view&id={{ trip_pics[0].url }}"
+                                          alt=""/></span>
+        {% else %}
+        <span class="image fit main"><img src="" alt=""/></span>
+        {% endif %}
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 col-12-medium">
+                        <header>
+                            <h2>Time to</h2>
+                            <p></p>
+                        </header>
+                    </div>
+                    <div class="col-4 col-12-medium">
+                        <header>
+                            <h2>e M A G N</h2>
+                            <p></p>
+                        </header>
+                    </div>
+                    <div class="col-4 col-12-medium">
+                        <header>
+                            <h2> the Future</h2>
+                            <p></p>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#two" class="goto-next scrolly">Next</a>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="spotlight style2 right">
+        {% if square_pics[0]: %}
+        <div class="col-4">
+            <span class="image fit main"><img src="https://drive.google.com/uc?export=view&id={{ square_pics[0].url }}"
+                                              alt=""/></span>
+        </div>
+        <div class="content">
+            <header>
+                <h2>{{ square_pics[0].title }}</h2>
+                <p></p>
+            </header>
+            {% if square_pics[0].description == None: %}
+            <p></p>
+            {% else %}
+            <p>{{ square_pics[0].description }}</p>
+            {% endif %}
+            <ul class="actions">
+                <li><a href="https://opensea.io/eMagn" target="_blank" class="button">NFT Gallery</a></li>
+            </ul>
+        </div>
+        {% else %}
+        <div class="col-4">
+            <span class="image fit main"><img src="" alt=""/></span>
+        </div>
+        <div class="content">
+            <header>
+                <h2>Update in progress. Please come back in a while!</h2>
+                <p></p>
+            </header>
+            <p>Updating...</p>
+            <ul class="actions">
+                <li><a href="https://opensea.io/eMagn" target="_blank" class="button">NFT Gallery</a></li>
+            </ul>
+        </div>
+        {% endif %}
+        <a href="#three" class="goto-next scrolly">Next</a>
+    </section>
+
+    <!-- Three -->
+    <section id="three" class="spotlight style3 left">
+        {% if square_pics[1]: %}
+        <span class="image fit main bottom"><img
+                src="https://drive.google.com/uc?export=view&id={{ square_pics[1].url  }}" alt=""/></span>
+        <div class="content">
+            <header>
+                <h2>{{ square_pics[1].title }}</h2>
+                <p></p>
+            </header>
+            {% if square_pics[1].description == None: %}
+            <p></p>
+            {% else %}
+            <p>{{ square_pics[1].description }}</p>
+            {% endif %}
+            <ul class="actions">
+                <li><a href="https://opensea.io/eMagn" target="_blank" class="button">NFT Gallery</a></li>
+            </ul>
+        </div>
+        {% else %}
+        <span class="image fit main bottom"><img src="" alt=""/></span>
+        <div class="content">
+            <header>
+                <h2>Update in progress. Please come back in a while!</h2>
+                <p></p>
+            </header>
+            <p>Update...</p>
+            <ul class="actions">
+                <li><a href="https://opensea.io/eMagn" target="_blank" class="button">NFT Gallery</a></li>
+            </ul>
+        </div>
+        {% endif %}
+        <a href="#four" class="goto-next scrolly">Next</a>
+    </section>
+
+    <!-- Four -->
+    <section id="four" class="spotlight style1 bottom">
+        {% if trip_pics[1]: %}
+        <span class="image fit main"><img src="https://drive.google.com/uc?export=view&id={{ trip_pics[1].url }}"
+                                          alt=""/></span>
+        {% else %}
+        <span class="image fit main"><img src="" alt="Updating..."/></span>
+        {% endif %}
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 col-12-medium">
+                        <header>
+                            <h2>e M A G N</h2>
+                            <p></p>
+                        </header>
+                    </div>
+                    <div class="col-4 col-12-medium">
+                        <header>
+                            <h2>D i g i t a l</h2>
+                            <p></p>
+                        </header>
+                    </div>
+                    <div class="col-4 col-12-medium">
+                        <header>
+                            <h2>A r t</h2>
+                            <p></p>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#five" class="goto-next scrolly">Next</a>
+    </section>
+
+    <!-- Five -->
+    <section id="five" class="wrapper style2 special fade">
+        <div class="container">
+            <header>
+                <h2>Get in contact with eMagn</h2>
+                <p>If you have any questions leave your email, and we will contact you. <br>We will not share you
+                    information with anyone.</p>
+            </header>
+            <form method="post" action="{{ url_for('home') }}" class="cta">
+                <div class="row gtr-uniform gtr-50">
+                    <div class="col-8 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Your Name"/>
+                    </div>
+                    <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email"
+                                                            placeholder="Your Email Address"/></div>
+                    <div class="col-4 col-12-xsmall"><input type="submit" value="Contact Me" class="fit primary"/></div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" target="_blank" class="icon brands alt fa-facebook-f"><span
+                    class="label">Facebook</span></a></li>
+            <!--						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>-->
+            <li><a href="https://www.instagram.com/emagn.digitalart/" target="_blank"
+                   class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="mailto:emagn.digitalart@gmail.com" class="icon solid alt fa-envelope"><span
+                    class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>{{year}} - &copy; eMagn NFT Digital Art</li>
+            <li>Original Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <li>Adapted by: RSun</li>
+        </ul>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/jquery.dropotron.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+</body>
+</html>
