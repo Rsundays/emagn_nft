@@ -81,7 +81,9 @@ def home():
             notifications.send_message(name=contact_name, email=contact_email)
             return render_template("index.html", year=year, trip_pics=random_trip, square_pics=random_square)
     else:
-        return render_template("index.html", year=year)
+        random_trip = []
+        random_square = []
+        return render_template("index.html", year=year, trip_pics=random_trip, square_pics=random_square)
 
 
 @app.route("/login", methods=["POST", "GET"])
