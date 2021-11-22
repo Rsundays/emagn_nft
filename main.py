@@ -9,6 +9,7 @@ import os
 from functools import wraps
 from forms import AddNewForm, UpdateForm
 from notifications_manager import Notifications
+import psycopg2
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
