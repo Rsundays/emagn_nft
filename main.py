@@ -71,19 +71,17 @@ def home():
             square_images.append(image)
         elif image.size == "Trip":
             trip_images.append(image)
-    if len(trip_images) > 1 & len(square_images) > 1:
-        try:
-            random_trip = sample(trip_images, 2)
-            random_square = sample(square_images, 2)
-        except ValueError:
-            return render_template("index.html", year=year)
-        finally:
-            if request.method == "POST":
-                notifications = Notifications()
-                contact_name = request.form["name"]
-                contact_email = request.form["email"]
-                notifications.send_message(name=contact_name, email=contact_email)
+    if len(trip_images) >= 2 & len(square_images) >= 2:
+        random_trip = sample(trip_images, 2)
+        random_square = sample(square_images, 2)
+        if request.method == "POST":
+            notifications = Notifications()
+            contact_name = request.form["name"]
+            contact_email = request.form["email"]
+            notifications.send_message(name=contact_name, email=contact_email)
             return render_template("index.html", year=year, trip_pics=random_trip, square_pics=random_square)
+    else:
+        return render_template("index.html", year=year)
 
 
 @app.route("/login", methods=["POST", "GET"])
