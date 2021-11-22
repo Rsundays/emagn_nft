@@ -71,7 +71,7 @@ def home():
             square_images.append(image)
         elif image.size == "Trip":
             trip_images.append(image)
-    if trip_images > 1 & square_images > 1:
+    if len(trip_images) > 1 & len(square_images) > 1:
         try:
             random_trip = sample(trip_images, 2)
             random_square = sample(square_images, 2)
