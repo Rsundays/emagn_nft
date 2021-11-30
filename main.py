@@ -160,7 +160,8 @@ def edit():
     image_to_update = ImageGallery.query.get(image_id)
     form = UpdateForm(
         title=image_to_update.title,
-        description=image_to_update.description
+        description=image_to_update.description,
+        size=image_to_update.size
     )
     if form.validate_on_submit():
         image_to_update.title = form.title.data

@@ -52,8 +52,8 @@
     <section id="one" class="spotlight style1 bottom">
         {% if trip_pics[0]: %}
         <span class="image fit main"><img
-                src="https://drive.google.com/uc?export=view&id=1xtpW3O5aC09bmWQtFu3UPDfZaL2uwB9W"
-                alt=""/></span>
+                src="https://drive.google.com/uc?export=view&id={{ trip_pics[0].url }}"
+                alt="{{ trip_pics[0].title }}"/></span>
         {% else %}
         <span class="image fit main"><img
                 src="https://drive.google.com/uc?export=view&id=1xtpW3O5aC09bmWQtFu3UPDfZaL2uwB9W" alt=""/></span>
@@ -90,7 +90,7 @@
         {% if square_pics[0]: %}
         <div class="col-4">
             <span class="image fit main"><img src="https://drive.google.com/uc?export=view&id={{ square_pics[0].url }}"
-                                              alt=""/></span>
+                                              alt="{{ square_pics[0].title }}"/></span>
         </div>
         <div class="content">
             <header>
@@ -128,7 +128,7 @@
     <section id="three" class="spotlight style3 left">
         {% if square_pics[1]: %}
         <span class="image fit main bottom"><img
-                src="https://drive.google.com/uc?export=view&id={{ square_pics[1].url  }}" alt=""/></span>
+                src="https://drive.google.com/uc?export=view&id={{ square_pics[1].url  }}" alt="{{ square_pics[1].title }}"/></span>
         <div class="content">
             <header>
                 <h2>{{ square_pics[1].title }}</h2>
@@ -163,7 +163,7 @@
     <section id="four" class="spotlight style1 bottom">
         {% if trip_pics[1]: %}
         <span class="image fit main"><img src="https://drive.google.com/uc?export=view&id={{ trip_pics[1].url }}"
-                                          alt=""/></span>
+                                          alt="{{trip.pic[1].title}}"/></span>
         {% else %}
         <span class="image fit main"><img src="" alt="Updating..."/></span>
         {% endif %}

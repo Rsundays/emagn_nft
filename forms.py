@@ -15,4 +15,5 @@ class AddNewForm(FlaskForm):
 class UpdateForm(FlaskForm):
     title = StringField("Titulo", validators=[DataRequired()])
     description = StringField("Descripcion")
+    size = SelectField("Tipo de cuadro", choices=["Square", "Trip"], validators=[DataRequired()])
     submit = SubmitField("Actualizar Cuadro")

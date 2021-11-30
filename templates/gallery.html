@@ -34,6 +34,7 @@
                     <div class="front-card">
                         <div class="title">{{ image.title }}</div>
                         <p class="overview">{{ image.description }}</p>
+                        <p class="overview">{{ image.size }}</p>
                         <a href="{{ url_for('edit', image_id=image.id) }}" class="button update-button">Actualizar</a>
                         <a href="{{ url_for('delete', image_id=image.id) }}" class="button delete-button">Borrar
                             cuadro</a>
