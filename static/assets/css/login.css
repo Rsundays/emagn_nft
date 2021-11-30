@@ -109,10 +109,16 @@ body {
 	 .image-card {
 		 width: calc(50% - 3rem);
 	}
+    .button {
+        width: calc(50% - 3rem);
+    }
 }
  @media screen and (max-width: 500px) {
 	 .image-card {
 		 width: 100%;
+	}
+	.button {
+		width: 100%;
 	}
 }
  .front, .back {
