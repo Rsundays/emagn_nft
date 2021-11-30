@@ -35,11 +35,11 @@
                         <div class="title">{{ image.title }}</div>
                         <p class="overview">{{ image.description }}
                             <br>{{ image.size }}</p>
-                        <div>
+                        <div class="btns">
                             <a href="{{ url_for('edit', image_id=image.id) }}"
                                class="button update-button">Actualizar</a>
                         </div>
-                        <div>
+                        <div class="btns">
                             <a href="{{ url_for('delete', image_id=image.id) }}" class="button delete-button">Borrar
                             cuadro</a>
                         </div>

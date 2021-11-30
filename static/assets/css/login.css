@@ -109,16 +109,10 @@ body {
 	 .image-card {
 		 width: calc(50% - 3rem);
 	}
-    .button {
-        width: calc(50% - 3rem);
-    }
 }
  @media screen and (max-width: 500px) {
 	 .image-card {
 		 width: 100%;
-	}
-	.button {
-		width: 100%;
 	}
 }
  .front, .back {
@@ -182,6 +176,10 @@ body {
  .image-card:nth-child(even):hover .back {
 	 transform: rotateY(0deg);
 }
+
+ .btns {
+    padding-bottom:10%;
+ }
  .button {
 	 transform: translateZ(40px);
 	 cursor: pointer;
