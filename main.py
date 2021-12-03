@@ -177,5 +177,15 @@ def logout():
     return redirect(url_for("home"))
 
 
+@app.route("/cookies-policy")
+def cookies():
+    return render_template("cookies-policy.html")
+
+
+@app.route("/privacy-policy")
+def privacy():
+    return render_template("privacy-policy.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
