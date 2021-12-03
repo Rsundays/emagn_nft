@@ -10,6 +10,17 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }} "/>
     </noscript>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDQBD8YXG7"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CDQBD8YXG7');
+
+    </script>
 </head>
 <body class="is-preload landing">
 <div id="page-wrapper">
@@ -128,7 +139,8 @@
     <section id="three" class="spotlight style3 left">
         {% if square_pics[1]: %}
         <span class="image fit main bottom"><img
-                src="https://drive.google.com/uc?export=view&id={{ square_pics[1].url  }}" alt="{{ square_pics[1].title }}"/></span>
+                src="https://drive.google.com/uc?export=view&id={{ square_pics[1].url  }}"
+                alt="{{ square_pics[1].title }}"/></span>
         <div class="content">
             <header>
                 <h2>{{ square_pics[1].title }}</h2>
