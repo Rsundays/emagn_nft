@@ -3,6 +3,7 @@ from datetime import date, datetime
 from flask import Flask, render_template, redirect, abort, session, url_for, request
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
+from flask_ckeditor import CKEditor
 from authlib.integrations.flask_client import OAuth
 import requests
 import os
