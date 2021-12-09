@@ -111,7 +111,7 @@
             {% if square_pics[0].description == None: %}
             <p></p>
             {% else %}
-            <p>{{ square_pics[0].description }}</p>
+            <p>{{ square_pics[0].description | safe }}</p>
             {% endif %}
             <ul class="actions">
                 <li><a href="https://opensea.io/eMagn" target="_blank" class="button">NFT Gallery</a></li>
@@ -149,7 +149,7 @@
             {% if square_pics[1].description == None: %}
             <p></p>
             {% else %}
-            <p>{{ square_pics[1].description }}</p>
+            <p>{{ square_pics[1].description | safe }}</p>
             {% endif %}
             <ul class="actions">
                 <li><a href="https://opensea.io/eMagn" target="_blank" class="button">NFT Gallery</a></li>
