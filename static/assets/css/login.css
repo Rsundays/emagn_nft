@@ -139,6 +139,7 @@ body {
 	 color: #fff;
 	 overflow: hidden;
 	 font-family: Poppins, sans-serif;
+	 z-index: 10;
 }
  .front:before {
 	 position: absolute;
