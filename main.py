@@ -73,9 +73,9 @@ def home():
             square_images.append(image)
         elif image.size == "Trip":
             trip_images.append(image)
-    if len(trip_images) >= 2 and len(square_images) >= 2:
-        random_trip = sample(trip_images, 2)
-        random_square = sample(square_images, 2)
+    if len(trip_images) >= 3 and len(square_images) >= 4:
+        random_trip = sample(trip_images, 3)
+        random_square = sample(square_images, 4)
         if request.method == "POST":
             notifications = Notifications()
             contact_name = request.form["name"]
@@ -187,6 +187,11 @@ def cookies():
 @app.route("/privacy-policy")
 def privacy():
     return render_template("privacy-policy.html")
+
+
+@app.route("/nft")
+def nft():
+    return render_template("what-is.html")
 
 
 if __name__ == "__main__":

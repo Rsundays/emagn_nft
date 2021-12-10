@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>eMAGN</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }} "/>
+    <noscript>
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }} "/>
+    </noscript>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDQBD8YXG7"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CDQBD8YXG7');
+
+
+    </script>
+</head>
+<body class="is-preload landing">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 id="logo"><a href="{{ url_for('home') }}">eMAGN</a></h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li>
+                    <a href="#">Menu</a>
+                    <ul>
+                        <li><a href="{{ url_for('nft') }}">What is NFT</a></li>
+<!--                        <li><a href="right-sidebar.html">Right Sidebar</a></li>-->
+<!--                        <li><a href="no-sidebar.html">No Sidebar</a></li>-->
+                    </ul>
+                </li>
+                <li><a href="https://opensea.io/eMagn" target="_blank" class="button primary">Buy NFT</a></li>
+            </ul>
+        </nav>
+    </header>

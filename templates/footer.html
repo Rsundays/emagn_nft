@@ -1,0 +1,46 @@
+    <!-- Cookie and Privacy Policy Consent -->
+    <div id="cookieConsent">
+        <div id="closeCookieConsent">x</div>
+        This website is using cookies. You consent to our cookies if you continue to use our website. Click on <a
+            href="{{ url_for('cookies')}}" target="_blank">Cookies Policy</a> or <a href="{{ url_for('privacy')}}"
+                                                                                    target="_blank"> Privacy Policy</a>
+        for more info.
+        <a class="cookieConsentOK">That's
+            Fine</a>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="https://www.facebook.com/profile.php?id=100075222944543" target="_blank"
+                   class="icon brands alt fa-facebook-f"><span
+                    class="label">Facebook</span></a></li>
+            <!--						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>-->
+            <li><a href="https://www.instagram.com/emagn.digitalart/" target="_blank"
+                   class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="mailto:info@emagndigitalart.com" class="icon solid alt fa-envelope"><span
+                    class="label">Email</span></a></li>
+            <li><a href="https://opensea.io/eMagn" target="_blank"
+                   class="icon brands alt fa-ethereum"><span class="label">Opensea</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>{{year}} - &copy; eMagn NFT Digital Art</li>
+            <li>Original Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <li>Adapted by: RSun</li>
+        </ul>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/jquery.dropotron.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+</body>
+</html>
