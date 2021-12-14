@@ -194,5 +194,10 @@ def nft():
     return render_template("what-is.html")
 
 
+@app.route("/buy")
+def buy():
+    return render_template("how-to.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

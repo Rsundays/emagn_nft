@@ -4170,3 +4170,8 @@ input, select, textarea {
     color: inherit;
 }
 /*Cookie Consent End*/
+
+/*How-to´s*/
+.instruction {
+    padding-bottom: 1.5em;
+}
