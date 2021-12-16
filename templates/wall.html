@@ -12,19 +12,19 @@
                 <div class="col-4 col-12-medium">
                     <header>
                         <h2>Up</h2>
-                        <p>It is Digital Art</p>
+                        <p></p>
                     </header>
                 </div>
                 <div class="col-4 col-12-medium">
                     <header>
                         <h2>on the</h2>
-                        <p>but put it up on the wall</p>
+                        <p></p>
                     </header>
                 </div>
                 <div class="col-4 col-12-medium">
                     <header>
                         <h2>Wall</h2>
-                        <p>so that everyone can enjoy it.</p>
+                        <p></p>
                     </header>
                 </div>
             </div>
@@ -34,7 +34,7 @@
 </section>
 
 <!-- Two -->
-{% if len(wall_pics) == 0: %}
+{% if wall_pics == []: %}
 <div class="col-4">
     <span class="image fit main"><img src="" alt=""/></span>
 </div>
@@ -49,9 +49,9 @@
     </ul>
 </div>
 {% else %}
-{% for n in range(len(wall_pics)): %}
-{% if n == 0 or ( n % 2 ) == 0:
-<section id="{{ n }}" class="spotlight style2 right">
+{% for n in range(1,6): %}
+{% if n == 0 or ( n % 2 ) == 0: %}
+<section id="three" class="spotlight style2 right">
     <div class="col-4">
             <span class="image fit main"><img src="https://drive.google.com/uc?export=view&id={{ wall_pics[n].url }}"
                                               alt="{{ wall_pics[n].title }}"/></span>
@@ -70,15 +70,13 @@
             <li><a href="https://opensea.io/eMagn" target="_blank" class="button">NFT Gallery</a></li>
         </ul>
     </div>
-<!--    <a href="#{{ n+1 }}" class="goto-next scrolly">Next</a>-->
-    {% else %}
+    <!--    <a href="#{{ n+1 }}" class="goto-next scrolly">Next</a>-->
 </section>
-
+{% else %}
 <!-- Three -->
-<section id="{{ n+1 }}" class="spotlight style3 left">
-    {% if wall_pics[n]: %}
+<section id="four" class="spotlight style3 left">
     <span class="image fit main bottom"><img
-            src="https://drive.google.com/uc?export=view&id={{ wall_pics[n].url  }}"
+            src="https://drive.google.com/uc?export=view&id={{ wall_pics[n].url }}"
             alt="{{ wall_pics[n].title }}"/></span>
     <div class="content">
         <header>
@@ -95,8 +93,10 @@
         </ul>
     </div>
 
-<!--    <a href="#four" class="goto-next scrolly">Next</a>-->
-    {% endif %}
+    <!--    <a href="#four" class="goto-next scrolly">Next</a>-->
 </section>
+{% endif %}
+{% endfor %}
+{% endif %}
 
 {% include "footer.html" %}
