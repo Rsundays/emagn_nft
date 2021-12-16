@@ -13,12 +13,10 @@
                 {% if wall_pics == []: %}
                 <h1>Updating in progress...</h1>
                 {% else %}
-
                 <!-- Sidebar -->
                 <section id="sidebar">
-                    {% for n in range(1,6): %}
                     <section>
-                        <h3>{{ wall_pics[n].title }}</h3>
+                        <h3>Up on the Wall</h3>
                         <p>Would you like to see it up at your place? If you want to buy it, but you want to see how it
                             looks first, you can reach out to us either via <a
                                     href="mailto:info@emagndigitalart.com"><span
@@ -38,11 +36,12 @@
                 </section>
 
             </div>
+            {% for n in range(1,6): %}
             <div class="col-8 col-12-medium imp-medium">
 
                 <!-- Content -->
                 <section id="content">
-                    <a href="#" class="image fit"><img
+                    <a href="https://opensea.io/eMagn" class="image fit"><img
                             src="https://drive.google.com/uc?export=view&id={{ wall_pics[n].url }}"
                             alt="{{ wall_pics[n].title }}"/></a>
 
