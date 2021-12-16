@@ -199,5 +199,20 @@ def buy():
     return render_template("how-to.html")
 
 
+@app.route("/wall")
+def wall():
+    wall_images = []
+    all_images = ImageGallery.query.all()
+    for image in all_images:
+        if image.size == "Wall":
+            wall_images.append(image)
+    if len(wall_images) >= 6:
+        random_wall = sample(wall_images, 6)
+        return render_template("wall.html", year=year, wall_pics=random_wall)
+    else:
+        random_wall = []
+        return render_template("wall.html", year=year, wall_pics=random_wall)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
