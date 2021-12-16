@@ -20,7 +20,7 @@
                 <h1>Updating in progress...</h1>
                 {% else %}
                 {% for n in range(1,6): %}
-                <div class="col-6 col-12-medium imp-medium">
+
                     <!-- Content -->
                     <section id="content">
                         <h3>{{ wall_pics[n].title }}</h3>
@@ -29,7 +29,7 @@
                                 alt="{{ wall_pics[n].title }}"/></a>
 
                     </section>
-                </div>
+
                 {% endfor %}
                 {% endif %}
             </div>
