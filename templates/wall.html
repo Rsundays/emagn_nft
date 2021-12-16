@@ -21,16 +21,18 @@
             </div>
             {% else %}
             <!-- Content -->
-            {% for n in range(1,6): %}
+
             <div class="col-6 col-12-medium">
                 <section id="content">
+                    {% for n in range(1,6): %}
                     <h3>{{ wall_pics[n].title }}</h3>
                     <a href="https://opensea.io/eMagn" class="image fit"><img
                             src="https://drive.google.com/uc?export=view&id={{ wall_pics[n].url }}"
                             alt="{{ wall_pics[n].title }}"/></a>
+                    {% endfor %}
                 </section>
-                {% endfor %}
             </div>
+
             {% endif %}
         </div>
 
