@@ -8,49 +8,52 @@
             <p>Have you wondered how any of the Artwork would look when you put it up on your wall? Well, this is
                 exactly why we have created this section, to help you picture it in your home.</p>
         </header>
+        {% if wall_pics == []: %}
         <div class="row gtr-150">
             <div class="col-4 col-12-medium">
-                {% if wall_pics == []: %}
                 <h1>Updating in progress...</h1>
                 {% else %}
                 {% for n in range(1,6): %}
-                <!-- Sidebar -->
-                <section id="sidebar">
-                    <section>
-                        <h3>{{ wall_pics[n].title }}</h3>
-                        <p>Would you like to see it up at your place? If you want to buy it, but you want to see how it
-                            looks first, you can reach out to us either via <a
-                                    href="mailto:info@emagndigitalart.com"><span
-                                    class="label">Email</span></a> or using the <a href="/#eight">Contact
-                                Me</a> section from the main Gallery.</br> </p>
-                        <footer>
-                            <ul class="actions">
-                                <li><a href="https://opensea.io/eMagn"
-                                       target="_blank" class="button">NFT Gallery</a>
-                                </li>
-                            </ul>
-                        </footer>
+                <div class="row gtr-150">
+                    <div class="col-4 col-12-medium">
+                        <!-- Sidebar -->
+                        <section id="sidebar">
+                            <section>
+                                <h3>{{ wall_pics[n].title }}</h3>
+                                <p>Would you like to see it up at your place? If you want to buy it, but you want to see
+                                    how it
+                                    looks first, you can reach out to us either via <a
+                                            href="mailto:info@emagndigitalart.com"><span
+                                            class="label">Email</span></a> or using the <a href="/#eight">Contact
+                                        Me</a> section from the main Gallery.</br> </p>
+                                <footer>
+                                    <ul class="actions">
+                                        <li><a href="https://opensea.io/eMagn"
+                                               target="_blank" class="button">NFT Gallery</a>
+                                        </li>
+                                    </ul>
+                                </footer>
 
-                    </section>
-                    <hr/>
+                            </section>
+                            <hr/>
 
-                </section>
+                        </section>
 
-            </div>
-            <div class="col-8 col-12-medium imp-medium">
+                    </div>
+                    <div class="col-8 col-12-medium imp-medium">
 
-                <!-- Content -->
-                <section id="content">
-                    <a href="#" class="image fit"><img
-                            src="https://drive.google.com/uc?export=view&id={{ wall_pics[n].url }}"
-                            alt="{{ wall_pics[n].title }}"/></a>
+                        <!-- Content -->
+                        <section id="content">
+                            <a href="#" class="image fit"><img
+                                    src="https://drive.google.com/uc?export=view&id={{ wall_pics[n].url }}"
+                                    alt="{{ wall_pics[n].title }}"/></a>
 
-                </section>
-                {% endfor %}
-                {% endif %}
+                        </section>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
-{% include "footer.html" %}
+        {% include "footer.html" %}
